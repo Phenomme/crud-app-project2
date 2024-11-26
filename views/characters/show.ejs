@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title><%= character.name %></title>
+  </head>
+  <body>
+    
+    <div class="show-character">
+    <h1><%= character.name %></h1>
+    <img src="<%= character.picture %>" alt="">
+    <p>Alias: <%= character.alias %></p>
+    <p>Where they are from: <%= character.whereTheyreFrom %></p>
+    <p>Abilities: <%= character.abilities %></p>
+    </div>
+    <form action="/characters/<%=character._id%>?_method=DELETE" method="POST">
+        <button type="submit"> Delete <%= character.name %> </button>
+        <a href="/characters/<%= character._id %>/edit">Edit <%= character.name %></a>
+        <a href="/characters">Back to Characters</a>
+    </form>
+
+  </body>
+</html>
